@@ -1,0 +1,2 @@
+Card images live here. Reference them from the inventory as images/cards/<file>.
+Allowed: .jpg .jpeg .png .webp .avif, up to 8MB each, local files only.

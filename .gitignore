@@ -1,0 +1,18 @@
+# Build output
+dist/
+
+# Dependencies (this project intentionally has zero runtime dependencies)
+node_modules/
+
+# Private working files - never commit inventory exports or raw scans
+private/
+*.private.csv
+inventory*.csv
+!templates/inventory-template.csv
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/

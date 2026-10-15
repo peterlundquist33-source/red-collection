@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The RED Collection &mdash; a curated sports card vault</title>
+    <meta
+      name="description"
+      content="The RED Collection is a curated, hand-catalogued sports card vault: fronts, backs and the story behind every card."
+    />
+    <meta name="theme-color" content="#121214" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="./" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="The RED Collection" />
+    <meta
+      property="og:description"
+      content="A curated sports card vault - fronts, backs and the story behind every card."
+    />
+    <meta property="og:image" content="favicon.svg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="The RED Collection" />
+    <meta
+      name="twitter:description"
+      content="A curated sports card vault - fronts, backs and the story behind every card."
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="shell site-header__inner">
+        <a class="brand" href="./">
+          <span class="brand__mark" aria-hidden="true">R</span>
+          <span class="brand__text">
+            <span class="brand__name">The <strong>RED</strong> Collection</span>
+            <span class="brand__tag">Sports card vault</span>
+          </span>
+        </a>
+        <nav class="site-nav" aria-label="Sections">
+          <a href="#featured">Featured</a>
+          <a href="#gallery-section">Gallery</a>
+          <a href="#about">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="shell hero__inner">
+          <p class="hero__eyebrow">Curated &middot; Catalogued &middot; Kept</p>
+          <h1 class="hero__title" id="hero-title">
+            The <span class="hero__accent">RED</span> Collection
+          </h1>
+          <p class="hero__lede">
+            A personal vault of sports cards, documented one card at a time &mdash; front and back,
+            with the story behind why each one earned its place.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#gallery-section">Browse the vault</a>
+            <a class="button button--ghost" href="#about">How it works</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="summary" aria-labelledby="summary-title">
+        <div class="shell">
+          <h2 class="section-title" id="summary-title">Collection at a glance</h2>
+          <dl class="metrics" id="collection-summary"></dl>
+        </div>
+      </section>
+
+      <section class="featured" id="featured" aria-labelledby="featured-title">
+        <div class="shell">
+          <h2 class="section-title" id="featured-title">Featured cards</h2>
+          <div id="featured-cards" class="featured__body"></div>
+        </div>
+      </section>
+
+      <section class="gallery" id="gallery-section" aria-labelledby="gallery-title">
+        <div class="shell">
+          <h2 class="section-title" id="gallery-title">The gallery</h2>
+
+          <form class="controls" id="filters" role="search" aria-labelledby="gallery-title" onsubmit="return false">
+            <div class="controls__search">
+              <label class="label" for="search">Search the collection</label>
+              <input
+                class="input"
+                type="search"
+                id="search"
+                name="search"
+                placeholder="Player, team, set&hellip;"
+                autocomplete="off"
+              />
+            </div>
+            <div class="controls__filters">
+              <div class="field">
+                <label class="label" for="filter-sport">Sport</label>
+                <select class="select" id="filter-sport" data-filter="sport"><option value="">All</option></select>
+              </div>
+              <div class="field">
+                <label class="label" for="filter-player">Player</label>
+                <select class="select" id="filter-player" data-filter="player"><option value="">All</option></select>
+              </div>
+              <div class="field">
+                <label class="label" for="filter-team">Team</label>
+                <select class="select" id="filter-team" data-filter="team"><option value="">All</option></select>
+              </div>
+              <div class="field">
+                <label class="label" for="filter-year">Year</label>
+                <select class="select" id="filter-year" data-filter="year"><option value="">All</option></select>
+              </div>
+              <div class="field">
+                <label class="label" for="filter-set">Set</label>
+                <select class="select" id="filter-set" data-filter="set"><option value="">All</option></select>
+              </div>
+              <div class="field">
+                <label class="label" for="filter-status">Status</label>
+                <select class="select" id="filter-status" data-filter="status"><option value="">All</option></select>
+              </div>
+            </div>
+            <button class="button button--ghost controls__clear" type="button" id="clear-filters" hidden>
+              Clear filters
+            </button>
+          </form>
+
+          <p class="results" id="results-status" role="status" aria-live="polite"></p>
+          <div id="gallery" class="gallery__body"></div>
+        </div>
+      </section>
+
+      <section class="about" id="about" aria-labelledby="about-title">
+        <div class="shell about__inner">
+          <h2 class="section-title" id="about-title">About this vault</h2>
+          <p>
+            Every card here is catalogued by hand in a private inventory, then published to this
+            page as a read-only showroom. The gallery shows what the card is and why it matters.
+          </p>
+          <p class="about__note">
+            This is a showcase, not a store. Nothing here is for sale, and no financial or
+            ownership records are published &mdash; only the card and its story.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <p>The RED Collection &middot; &copy; <span id="current-year">2026</span></p>
+        <p class="site-footer__note">Built as a static site. No tracking, no third-party fonts, no analytics.</p>
+      </div>
+    </footer>
+
+    <div class="dialog-backdrop" id="card-dialog-backdrop" hidden></div>
+    <div
+      class="dialog"
+      id="card-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="card-dialog-title"
+      hidden
+    >
+      <div class="dialog__panel">
+        <button
+          class="dialog__close"
+          id="card-dialog-close"
+          type="button"
+          data-action="close-dialog"
+          aria-label="Close card details"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="dialog__body" id="card-dialog-body"></div>
+      </div>
+    </div>
+
+    <script type="module" src="assets/js/app.js"></script>
+  </body>
+</html>

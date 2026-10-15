@@ -1,0 +1,20 @@
+{
+  "name": "red-collection",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The RED Collection - a static, zero-backend public showroom for a sports-card collection.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test \"tests/*.test.mjs\"",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check-dist.mjs",
+    "sync:csv": "node scripts/sync.mjs --csv",
+    "sync:sheet": "node scripts/sync.mjs --sheet",
+    "verify": "npm test && npm run build && npm run check",
+    "serve": "node scripts/serve.mjs"
+  },
+  "license": "UNLICENSED"
+}
