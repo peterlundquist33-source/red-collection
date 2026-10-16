@@ -1,1 +1,76 @@
-[]
+[
+  {
+    "id": "anthony-black-2024-prizm-black-shimmer",
+    "player": "Anthony Black",
+    "sport": "basketball",
+    "team": "Orlando Magic",
+    "year": 2024,
+    "set": "Panini Prizm FOTL Hobby",
+    "parallel": "Black",
+    "gradingCompany": "Raw",
+    "status": "owned",
+    "featured": false,
+    "frontImage": "images/cards/anthony-black-2024-prizm-black-shimmer-front.jpg",
+    "altFront": "Front of a 2024-25 Panini Prizm FOTL Hobby Anthony Black card, black shimmer parallel, Orlando Magic.",
+    "story": "From 2024-25 Panini Prizm First Off The Line (FOTL) Hobby. This is the Black parallel of Anthony Black, Orlando Magic."
+  },
+  {
+    "id": "bobi-klintman-2024-prizm-sensational-auto",
+    "player": "Bobi Klintman",
+    "sport": "basketball",
+    "team": "Detroit Pistons",
+    "year": 2024,
+    "set": "Panini Prizm FOTL Hobby",
+    "parallel": "Sensational Signatures",
+    "gradingCompany": "Raw",
+    "status": "owned",
+    "featured": false,
+    "frontImage": "images/cards/bobi-klintman-2024-prizm-sensational-auto-front.jpg",
+    "altFront": "Front of a 2024-25 Panini Prizm FOTL Hobby Bobi Klintman rookie autograph card, Sensational Signatures insert, Detroit Pistons.",
+    "story": "From 2024-25 Panini Prizm First Off The Line (FOTL) Hobby. On-card rookie autograph from the Sensational Signatures insert set, Bobi Klintman, Detroit Pistons."
+  },
+  {
+    "id": "derrick-white-2024-prizm-purple",
+    "player": "Derrick White",
+    "sport": "basketball",
+    "team": "Boston Celtics",
+    "year": 2024,
+    "set": "Panini Prizm FOTL Hobby",
+    "parallel": "Purple",
+    "gradingCompany": "Raw",
+    "status": "owned",
+    "featured": false,
+    "frontImage": "images/cards/derrick-white-2024-prizm-purple-front.jpg",
+    "altFront": "Front of a 2024-25 Panini Prizm FOTL Hobby Derrick White card, purple parallel, Boston Celtics.",
+    "story": "From 2024-25 Panini Prizm First Off The Line (FOTL) Hobby, Panini's earliest hobby release of the Prizm product each year. This is the Purple parallel of Derrick White, Boston Celtics."
+  },
+  {
+    "id": "ray-allen-2024-prizm-gold",
+    "player": "Ray Allen",
+    "sport": "basketball",
+    "team": "Boston Celtics",
+    "year": 2024,
+    "set": "Panini Prizm FOTL Hobby",
+    "parallel": "Gold",
+    "gradingCompany": "Raw",
+    "status": "owned",
+    "featured": false,
+    "frontImage": "images/cards/ray-allen-2024-prizm-gold-front.jpg",
+    "altFront": "Front of a 2024-25 Panini Prizm FOTL Hobby Ray Allen card, gold cracked-ice parallel, number 34.",
+    "story": "From 2024-25 Panini Prizm First Off The Line (FOTL) Hobby. This is the Gold parallel of Ray Allen, a Prizm legends-set insert."
+  },
+  {
+    "id": "terrence-shannon-jr-2024-prizm-auto",
+    "player": "Terrence Shannon Jr.",
+    "sport": "basketball",
+    "team": "Minnesota Timberwolves",
+    "year": 2024,
+    "set": "Panini Prizm FOTL Hobby",
+    "gradingCompany": "Raw",
+    "status": "owned",
+    "featured": false,
+    "frontImage": "images/cards/terrence-shannon-jr-2024-prizm-auto-front.jpg",
+    "altFront": "Front of a 2024-25 Panini Prizm FOTL Hobby Terrence Shannon Jr. rookie autograph card, Minnesota Timberwolves.",
+    "story": "From 2024-25 Panini Prizm First Off The Line (FOTL) Hobby. On-card rookie autograph, Terrence Shannon Jr., Minnesota Timberwolves."
+  }
+]

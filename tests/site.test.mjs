@@ -10,7 +10,7 @@ import path from 'node:path';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 
-import { PUBLIC_FIELDS } from '../scripts/lib/schema.mjs';
+import { PUBLIC_FIELDS, REQUIRED_FIELDS } from '../scripts/lib/schema.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (relative) => fs.readFileSync(path.join(ROOT, relative), 'utf8');
@@ -21,10 +21,20 @@ const css = read('site/assets/css/styles.css');
 
 /* ------------------------------ data file --------------------------------- */
 
-test('committed data/cards.json is an empty array', () => {
+test('committed data/cards.json is a valid card array', () => {
   const cards = JSON.parse(read('data/cards.json'));
   assert.ok(Array.isArray(cards), 'must be an array');
-  assert.equal(cards.length, 0, 'no cards may be fabricated');
+  const ids = new Set();
+  for (const card of cards) {
+    for (const field of REQUIRED_FIELDS) {
+      assert.ok(
+        card[field] !== undefined && card[field] !== null && card[field] !== '',
+        `card ${card.id ?? '?'} is missing required field: ${field}`,
+      );
+    }
+    assert.ok(!ids.has(card.id), `duplicate card id: ${card.id}`);
+    ids.add(card.id);
+  }
 });
 
 test('committed data file contains only allowlisted fields if ever populated', () => {

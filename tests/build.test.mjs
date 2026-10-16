@@ -45,7 +45,11 @@ test('build produces dist/ with exactly the public files', () => {
     assert.ok(!fs.existsSync(path.join(DIST, forbidden)), `dist/${forbidden} must not be published`);
   }
 
-  assert.deepEqual(JSON.parse(fs.readFileSync(path.join(DIST, 'data/cards.json'), 'utf8')), []);
+  // dist's copy must exactly mirror the committed source — the build step
+  // copies, it never edits card data.
+  const distCards = JSON.parse(fs.readFileSync(path.join(DIST, 'data/cards.json'), 'utf8'));
+  const srcCards = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/cards.json'), 'utf8'));
+  assert.deepEqual(distCards, srcCards);
 });
 
 test('privacy gate passes on the real build', () => {
