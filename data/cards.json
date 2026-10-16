@@ -48,16 +48,16 @@
     "id": "ray-allen-2024-prizm-gold",
     "player": "Ray Allen",
     "sport": "basketball",
-    "team": "Boston Celtics",
+    "team": "Seattle SuperSonics",
     "year": 2024,
     "set": "Panini Prizm FOTL Hobby",
-    "parallel": "Gold",
+    "parallel": "Legends Gold",
     "gradingCompany": "Raw",
     "status": "owned",
     "featured": false,
     "frontImage": "images/cards/ray-allen-2024-prizm-gold-front.jpg",
-    "altFront": "Front of a 2024-25 Panini Prizm FOTL Hobby Ray Allen card, gold cracked-ice parallel, number 34.",
-    "story": "From 2024-25 Panini Prizm First Off The Line (FOTL) Hobby. This is the Gold parallel of Ray Allen, a Prizm legends-set insert."
+    "altFront": "Front of a 2024-25 Panini Prizm FOTL Hobby Ray Allen card, Legends subset, gold cracked-ice parallel, Seattle SuperSonics, number 34.",
+    "story": "From 2024-25 Panini Prizm First Off The Line (FOTL) Hobby, Legends subset. This is the Gold parallel of Ray Allen, Seattle SuperSonics."
   },
   {
     "id": "terrence-shannon-jr-2024-prizm-auto",
