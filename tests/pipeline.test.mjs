@@ -17,6 +17,7 @@ const HEADERS = [
   'grade',
   'gradingCompany',
   'status',
+  'tier',
   'featured',
   'frontImage',
   'backImage',
@@ -39,6 +40,7 @@ function row(overrides = {}, rowNumber = 2) {
     grade: '',
     gradingCompany: '',
     status: 'owned',
+    tier: '',
     featured: 'false',
     frontImage: '',
     backImage: '',
@@ -161,6 +163,27 @@ test('grading company must be a known grader', () => {
   assert.equal(bad.cards.length, 0);
   const good = buildCards(HEADERS, [row({ grade: '9', gradingCompany: 'psa' })]);
   assert.equal(good.cards[0].gradingCompany, 'PSA');
+});
+
+test('tier is optional, but when present must be a known tier', () => {
+  const absent = buildCards(HEADERS, [row({ tier: '' })]);
+  assert.equal(absent.cards.length, 1);
+  assert.equal('tier' in absent.cards[0], false);
+
+  const bad = buildCards(HEADERS, [row({ tier: 'Priceless' })]);
+  assert.equal(bad.cards.length, 0);
+  assert.ok(bad.errors.some((error) => /"tier" must be one of/.test(error)));
+
+  const good = buildCards(HEADERS, [row({ tier: 'grail' })]);
+  assert.equal(good.cards[0].tier, 'Grail');
+});
+
+test('tier is never a number or currency-shaped value', () => {
+  for (const tier of ['$500', '500', '12.50']) {
+    const { cards, errors } = buildCards(HEADERS, [row({ tier })]);
+    assert.equal(cards.length, 0, `tier "${tier}" should be rejected`);
+    assert.ok(errors.some((error) => /"tier" must be one of/.test(error)));
+  }
 });
 
 test('year must be a plausible four-digit year', () => {

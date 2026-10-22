@@ -89,6 +89,7 @@ Never published, and enforced in three independent places:
 | --- | --- |
 | Purchase price, price paid, cost basis | `sync.mjs` **aborts** if such a column exists |
 | Estimated / current / market / insured value, appraisals | `sync.mjs` aborts |
+| *(allowed, by design)* `tier` — a qualitative Grail/Keeper/Tradeable rating | Not a price; never a number or a currency symbol |
 | Acquisition date/source, purchased-from, seller, vendor, invoice, receipt | `sync.mjs` aborts |
 | Sale price, profit, margin, offers | `sync.mjs` aborts |
 | Raw Google Drive / Docs / `googleusercontent` URLs | `sync.mjs` aborts on any field containing one; image paths must be local |
@@ -139,6 +140,7 @@ line and never stored in the repo.
 | `grade` | string | no | e.g. `9`, `9.5`, `A` |
 | `gradingCompany` | enum | no | `PSA`, `BGS`, `SGC`, `CGC`, `CSG`, `HGA`, `TAG`, `Raw` |
 | `status` | enum | **yes** | `owned`, `incoming`, `grading`, `traded`, `sold`, `archived` |
+| `tier` | enum | no | `Grail`, `Keeper`, `Tradeable` — a qualitative "how much this card matters to me" rating. Deliberately not a price; see Privacy model |
 | `featured` | boolean | **yes** (defaults `false`) | Drives the featured region |
 | `frontImage` | path | no | Local path under `images/cards/`. A bare filename is accepted and prefixed |
 | `backImage` | path | no | Same rules |

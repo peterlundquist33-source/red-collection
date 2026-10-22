@@ -7,7 +7,7 @@
  * and the browser module stays a thin wiring layer.
  */
 
-export const FILTER_KEYS = ['sport', 'player', 'team', 'year', 'set', 'status'];
+export const FILTER_KEYS = ['sport', 'player', 'team', 'year', 'set', 'status', 'tier'];
 
 export const FILTER_LABELS = {
   sport: 'Sport',
@@ -16,6 +16,14 @@ export const FILTER_LABELS = {
   year: 'Year',
   set: 'Set',
   status: 'Status',
+  tier: 'Tier',
+};
+
+/** Tier -> badge modifier class, for the gold/silver/standard tile styling. */
+export const TIER_BADGE_CLASS = {
+  Grail: 'badge--grail',
+  Keeper: 'badge--keeper',
+  Tradeable: 'badge--muted',
 };
 
 export function escapeHtml(value) {
@@ -62,6 +70,7 @@ export function matchesQuery(card, query) {
     card.grade,
     card.gradingCompany,
     card.status,
+    card.tier,
     card.cardNumber,
     card.year,
     card.story,
@@ -179,6 +188,10 @@ function imageHtml(card, side) {
 export function cardTileHtml(card) {
   const badges = [];
   if (card.featured) badges.push('<span class="badge badge--accent">Featured</span>');
+  if (card.tier) {
+    const tierClass = TIER_BADGE_CLASS[card.tier] ?? 'badge--muted';
+    badges.push(`<span class="badge ${tierClass}">${escapeHtml(card.tier)}</span>`);
+  }
   if (card.grade) {
     badges.push(
       `<span class="badge">${escapeHtml([card.gradingCompany, card.grade].filter(Boolean).join(' '))}</span>`,
@@ -253,6 +266,7 @@ export function detailHtml(card) {
     ['Parallel', card.parallel],
     ['Grade', [card.gradingCompany, card.grade].filter(Boolean).join(' ')],
     ['Status', card.status],
+    ['Tier', card.tier],
   ].filter(([, value]) => value !== undefined && value !== null && value !== '');
 
   const story = card.story

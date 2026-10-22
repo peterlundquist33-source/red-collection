@@ -19,6 +19,7 @@ export const PUBLIC_FIELDS = [
   'grade',
   'gradingCompany',
   'status',
+  'tier',
   'featured',
   'frontImage',
   'backImage',
@@ -57,6 +58,13 @@ export const SPORTS = [
 ];
 
 export const STATUSES = ['owned', 'incoming', 'grading', 'traded', 'sold', 'archived'];
+
+/**
+ * Qualitative "how much this card matters to me" rating. Deliberately not a
+ * number or a dollar amount — see FORBIDDEN_FIELD_TOKENS and the privacy
+ * model in README.md. Ordered highest-significance first.
+ */
+export const TIERS = ['Grail', 'Keeper', 'Tradeable'];
 
 export const GRADING_COMPANIES = ['PSA', 'BGS', 'SGC', 'CGC', 'CSG', 'HGA', 'TAG', 'Raw'];
 

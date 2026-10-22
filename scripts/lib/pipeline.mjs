@@ -20,6 +20,7 @@ import {
   REQUIRED_FIELDS,
   SPORTS,
   STATUSES,
+  TIERS,
   containsForbiddenValue,
   isForbiddenFieldName,
   normalizeFieldName,
@@ -235,6 +236,16 @@ export function buildCards(headers, records, options = {}) {
       fail(rowErrors, `row ${row}: "status" must be one of ${STATUSES.join(', ')}, got "${raw.status ?? ''}"`);
     } else {
       card.status = status;
+    }
+
+    const tier = cleanText(raw.tier);
+    if (tier) {
+      const match = TIERS.find((candidate) => candidate.toLowerCase() === tier.toLowerCase());
+      if (!match) {
+        fail(rowErrors, `row ${row}: "tier" must be one of ${TIERS.join(', ')}, got "${tier}"`);
+      } else {
+        card.tier = match;
+      }
     }
 
     const cardNumber = cleanText(raw.cardNumber);

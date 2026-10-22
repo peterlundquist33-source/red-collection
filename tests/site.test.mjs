@@ -88,8 +88,8 @@ test('every required region is present', () => {
   }
 });
 
-test('all six filters exist as labelled native selects', () => {
-  for (const key of ['sport', 'player', 'team', 'year', 'set', 'status']) {
+test('all filters exist as labelled native selects', () => {
+  for (const key of ['sport', 'player', 'team', 'year', 'set', 'status', 'tier']) {
     assert.match(html, new RegExp(`data-filter="${key}"`), `missing ${key} filter`);
     assert.match(html, new RegExp(`for="filter-${key}"`), `missing label for ${key}`);
     assert.match(html, new RegExp(`id="filter-${key}"`), `missing id for ${key}`);
